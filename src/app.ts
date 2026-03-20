@@ -8,7 +8,6 @@ import morganMiddleware from '@/middlewares/morgan.middleware';
 import errorHandler from '@/middlewares/errorHandler';
 import { notFoundHandler } from '@/middlewares/notFoundHandler';
 import router from '@/routes/index';
-
 const app: Express = express();
 
 // Logging
