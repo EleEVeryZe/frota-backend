@@ -6,6 +6,7 @@ export const Constants = {
 		UNAUTHORIZED: 401,
 		NOT_FOUND: 404,
 		INTERNAL_ERROR: 500,
+		NO_CONTENT: 204
 	},
 	PAGINATION: {
 		DEFAULT_LIMIT: 10,
