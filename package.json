@@ -5,7 +5,7 @@
 	"main": "dist/server.js",
 	"type": "commonjs",
 	"scripts": {
-		"dev": "tsx watch src/server.ts",
+		"dev": "tsx watch src/infra/adapters/rest_api/server.ts",
 		"build": "tsc && tsc-alias ",
 		"start": "node --enable-source-maps dist/server.js",
 		"lint": "eslint src --ext .ts --fix",
