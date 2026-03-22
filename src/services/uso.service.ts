@@ -23,7 +23,6 @@ export class UsoService {
         }
 
         return this.usoRepo.add({
-            id: crypto.randomUUID(),
             idMotorista,
             idAutomovel,
             dataInicio: new Date().toISOString()
