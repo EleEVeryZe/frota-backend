@@ -1,6 +1,6 @@
 import request from 'supertest';
 import express from 'express';
-import router from '@/routes';
+import router from '@/infra/adapters/rest_api/routes';
 
 const app = express();
 app.use(express.json());
