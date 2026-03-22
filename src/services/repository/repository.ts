@@ -1,29 +1,35 @@
-export class Repository<T extends { id: string }> {
-    protected dados = new Map<string, T>();
+import { randomUUID } from 'crypto';
 
-    add(data: T): T {
-        this.dados.set(data.id, data);
-        return data;
+export class Repository<T> {
+    protected dados = new Map<string, T & { id: string }>();
+
+    add(data: T): T & { id: string } {
+        const id = randomUUID();
+        const entry = { ...data, id };
+        
+        this.dados.set(id, entry);
+        return entry;
     }
 
-    getById(id: string): T | undefined {
+    getById(id: string): (T & { id: string }) | undefined {
         return this.dados.get(id);
     }
 
-    getAll(): T[] {
+    getAll(): (T & { id: string })[] {
         return Array.from(this.dados.values());
     }
 
-
-    update(key: string, newData: T): T {
-        if (!this.dados.has(key)) {
+    update(id: string, newData: T): T & { id: string } {
+        if (!this.dados.has(id)) {
             throw new Error("Registro não encontrado para atualização.");
         }
-        this.dados.set(key, newData);
-        return newData;
+        
+        const updatedEntry = { ...newData, id };
+        this.dados.set(id, updatedEntry);
+        return updatedEntry;
     }
 
-    delete(key: string): boolean {
-        return this.dados.delete(key);
+    delete(id: string): boolean {
+        return this.dados.delete(id);
     }
 }
