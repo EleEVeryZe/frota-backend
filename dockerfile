@@ -12,4 +12,4 @@ RUN npm install --only=production
 COPY --from=builder /usr/src/app/dist ./dist
 
 EXPOSE 4000
-CMD ["node", "dist/server.js"]
+CMD ["node", "dist/infra/adapters/rest_api/server.js"]
