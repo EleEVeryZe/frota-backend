@@ -20,7 +20,7 @@ Para facilitar a avaliação, incluí um script de automação em **Bash** que s
 **Para rodar o teste automatizado:**
 ```bash
 chmod +x request.bash
-./request.bash
+./bash/request.bash
 ```
 
 
